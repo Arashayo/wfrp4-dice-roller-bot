@@ -1,0 +1,31 @@
+{
+  "name": "discord-roller-bot",
+  "version": "1.0.0",
+  "description": "A simple bot that makes your roll calculations easier",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arashayo/wfrp4-dice-roller-bot.git"
+  },
+  "keywords": [
+    "Discord",
+    "dice",
+    "roll",
+    "bot"
+  ],
+  "author": "Dominik Jezierski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Arashayo/wfrp4-dice-roller-bot/issues"
+  },
+  "homepage": "https://github.com/Arashayo/wfrp4-dice-roller-bot#readme",
+  "dependencies": {
+    "discord.js": "^14.7.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.30.0"
+  }
+}
