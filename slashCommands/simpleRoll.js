@@ -17,12 +17,11 @@ data: new SlashCommandBuilder()
 		async execute(interaction) {
 			const input = roller.cutInput(interaction.options.getString('dices'));
 			const hideOption = interaction.options.get('hide');
-			if(hideOption){
-				await interaction.reply({content:`Result: ${roller.roll(input[0],input[1])}`, ephemeral: true});
-			}
-			else{
-				await interaction.reply(`Result: ${roller.roll(input[0],input[1])}`);
-			}
+			
+			await interaction.reply({
+				content: `Result: ${roller.roll(input[0],input[1])}`,
+				ephemeral: hideOption
+			  });
 
 		}
 
