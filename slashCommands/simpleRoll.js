@@ -1,4 +1,4 @@
-const { SlashCommandBuilder} = require('discord.js');
+const { SlashCommandBuilder, userMention} = require('discord.js');
 const roller = require('../functions/diceRollFunc.js');
 
 module.exports = {
@@ -17,9 +17,10 @@ data: new SlashCommandBuilder()
 		async execute(interaction) {
 			const input = roller.cutInput(interaction.options.getString('dices'));
 			const hideOption = interaction.options.get('hide');
-			
+			console.log(interaction.user.username);
+
 			await interaction.reply({
-				content: `Result: ${roller.roll(input[0],input[1])}`,
+				content: `${userMention(interaction.user.id)} roll result: ${roller.roll(input[0],input[1])}`,
 				ephemeral: hideOption
 			  });
 

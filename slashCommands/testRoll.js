@@ -17,31 +17,26 @@ module.exports = {
             .setDescription('Add test difficulty'))
         .addBooleanOption(option => 
             option.setName('dramatic')
-            .setDescription('If you want to calculate SL, set "True"'))
-        .addUserOption(option =>
-            option.setName('opposed')
-            .setDescription('Choose the player you want to compare test with')),
+            .setDescription('If you want to calculate SL, set "True"')),
             
         async execute(interaction){
             let input = interaction.options.getNumber('skill_level') + interaction.options.getNumber('difficulty');
             const hideOption = interaction.options.get('hide');
             const dramaticOption = interaction.options.get('dramatic');
-            const opposedOption = interaction.options.getUser('opposed');
             const roll = skillCheck.testRoll();
-            
             let message;
+ 
             if (dramaticOption) {
               message = `Roll: ${roll}, SL: ${skillCheck.sl(input, roll)}`;
             } else {
               message = `Roll: ${roll}, Result: ${skillCheck.simpleCheck(input, roll)}`;
             }
-            
+        
             await interaction.reply({
               content: message,
               ephemeral: hideOption
             });
             
         }
-
 
 }
