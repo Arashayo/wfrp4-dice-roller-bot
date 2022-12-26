@@ -17,7 +17,6 @@ data: new SlashCommandBuilder()
 		async execute(interaction) {
 			const input = roller.cutInput(interaction.options.getString('dices'));
 			const hideOption = interaction.options.get('hide');
-			console.log(interaction.user.username);
 
 			await interaction.reply({
 				content: `${userMention(interaction.user.id)} roll result: ${roller.roll(input[0],input[1])}`,

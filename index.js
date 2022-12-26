@@ -3,6 +3,11 @@ const {token} = require('./config.json');
 const fs = require('fs');
 const path = require('path');
 
+global.globalCheck = false;
+global.globalRoll = null;
+global.globalSL = null;
+global.globalUser = null;
+
 const client = new Client({
     intents: [
         GatewayIntentBits.Guilds,

@@ -16,18 +16,18 @@ module.exports = {
             option.setName('difficulty')
             .setDescription('Add test difficulty'))
         .addBooleanOption(option => 
-            option.setName('dramatic')
+            option.setName('sl')
             .setDescription('If you want to calculate SL, set "True"')),
             
         async execute(interaction){
             let input = interaction.options.getNumber('skill_level') + interaction.options.getNumber('difficulty');
             const hideOption = interaction.options.get('hide');
-            const dramaticOption = interaction.options.get('dramatic');
+            const dramaticOption = interaction.options.get('sl');
             const roll = skillCheck.testRoll();
             let message;
  
             if (dramaticOption) {
-              message = `Roll: ${roll}, SL: ${skillCheck.sl(input, roll)}`;
+              message = `Roll: ${roll}, SL: (${skillCheck.sl(input, roll)})`;
             } else {
               message = `Roll: ${roll}, Result: ${skillCheck.simpleCheck(input, roll)}`;
             }

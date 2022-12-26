@@ -3,6 +3,18 @@ function testRoll()
     return(Math.floor(Math.random()*100) + 1);
 }
 
+//Checks if roll has the same two digits (in WFRP it means there is critcal hit)
+function checkCrit(roll)
+{
+    const rollString = roll.toString();
+    for (let i = 1; i < rollString.length; i++){
+      if(rollString[i] !== rollString[0]){
+        return false;
+      }
+      return true;
+    }
+}
+
 function simpleCheck(skill, roll)
 {
     if(skill>roll){
@@ -51,4 +63,4 @@ function sl(skill, roll)
       }
 }
 
-module.exports = {testRoll, simpleCheck, sl};
+module.exports = {testRoll, checkCrit, simpleCheck, sl};
