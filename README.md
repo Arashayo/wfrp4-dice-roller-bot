@@ -35,9 +35,34 @@ The idea for this bot was to make online RPG sessions a lot easier and as a cons
 - Add cheatsheet for GM/Players for statuses like "exhaustion" and other
 - Add Music bot that allows to stream local music to make better immersion (like from [Tabletop Audio](https://tabletopaudio.com/))
 - Add Crit Hit Table and Normal Hit Table  
+- Add Polish translation  
   
-If you have any suggestions feel free to contact me here or on Discord: <b>Arashayo#4858</b>
 
-## Instalation
+## Installation
 
-WIP
+### Configuring Bot:
+
+1. Go to  [Discord Developer Portal](https://discord.com/developers/applications)
+2. Click __New Application__
+3. Name it any way you want
+4. Copy `APPLICATION ID`
+5. Click __Bot__ from menu list
+6. Click __Add Bot__
+7. Click __Reset Token__ and Copy your `TOKEN` (Careful! Don't show anyone your token)
+8. Scroll down and check `MESSAGE CONTENT INTENT`
+9. Then go to `OAuth2` -> `URL Generator`
+10. In `SCOPES` click __bot__ then in `BOT PERMISSIONS` click __Administrator__
+11. Scroll down, copy your `GENERATED URL` and invite bot to your discord server.
+
+### Configuring Application:  
+
+1. Make sure that you have installed [Node.js](https://nodejs.org/en/)
+2. Clone this repository
+3. Rename `config-example.json` to `config.json`
+4. Paste your __TOKEN__ and __APPLICATION ID__ that you previously saved
+5. Run command line, proceed to the directory with this repository then run `npm i`
+6. Run `node deploy.js`
+7. After every step run `node index.js`
+8. Have fun!
+
+If you have any problems or suggestions feel free to create new issue or contact me on Discord: <b>Arashayo#4858</b>
